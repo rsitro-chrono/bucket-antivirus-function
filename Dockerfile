@@ -57,6 +57,11 @@ RUN rpm2cpio gnutls*.rpm | cpio -vimd
 RUN yumdownloader -x \*i686 --archlist=x86_64 nettle
 RUN rpm2cpio nettle*.rpm | cpio -vimd
 
+RUN yumdownloader -x \*i686 --archlist=x86_64 libcurl
+RUN rpm2cpio libcurl*.rpm | cpio -vimd
+
+RUN yumdownloader -x \*i686 --archlist=x86_64 binutils
+RUN rpm2cpio binutils*.rpm | cpio -vimd
 
 # Copy over the binaries and libraries
 RUN cp /tmp/usr/bin/clamscan /tmp/usr/bin/freshclam /tmp/usr/lib64/* /usr/lib64/libpcre.so.1 /opt/app/bin/
