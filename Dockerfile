@@ -63,6 +63,9 @@ RUN rpm2cpio libcurl*.rpm | cpio -vimd
 RUN yumdownloader -x \*i686 --archlist=x86_64 libnghttp2
 RUN rpm2cpio libnghttp2*.rpm | cpio -vimd
 
+RUN yumdownloader -x \*i686 --archlist=x86_64 libidn2
+RUN rpm2cpio libidn2*.rpm | cpio -vimd
+
 # Copy over the binaries and libraries
 RUN cp /tmp/usr/bin/clamscan /tmp/usr/bin/freshclam /tmp/usr/lib64/* /usr/lib64/libpcre.so.1 /opt/app/bin/
 
