@@ -65,7 +65,7 @@ RUN rpm2cpio binutils*.rpm | cpio -vimd
 
 # Copy over the binaries and libraries
 RUN cp /tmp/usr/bin/clamscan /tmp/usr/bin/freshclam /tmp/usr/bin/ld.bfd /tmp/usr/lib64/* /usr/lib64/libpcre.so.1 /opt/app/bin/
-RUN ln -s /opt/app/bin/ld.bfd /opt/app/bin/ld
+RUN ln -s /opt/app/bin/ld.bfd /usr/bin/ld
 
 # Fix the freshclam.conf settings
 RUN echo "DatabaseMirror database.clamav.net" > /opt/app/bin/freshclam.conf
